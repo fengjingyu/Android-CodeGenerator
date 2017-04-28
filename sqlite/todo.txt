@@ -1,0 +1,6 @@
+tryc
+cursor!=null
+事务
+class数据库表名
+back字段,back注释
+litepal的相似方法
