@@ -5,12 +5,6 @@ import java.util.LinkedHashMap;
 
 /**
  * @author fengjingyu@foxmail.com
- * @description 1 model中的static的字段不会生成在db类中
- * 2 @ignore可以忽略model的某一个字段不生成在db类中
- * 3 默认会生成 insert（存入一个） inserts(批量存入) deleteAll(删除所有) queryCount(查询所有数量) queryAll（查询所有） queryPage（分页）方法
- * 4 model的字段之上的注释会生成在db类中（仅多行注释）
- * 5 通过配置@query @update @delete可以生成对应的删查改方法
- * <p>
  */
 public class Parser {
     public final static String LINE = System.getProperty("line.separator");
@@ -26,11 +20,11 @@ public class Parser {
     public void parse(File file) {
         reset();
 
-        tableName = UtilString.getBeforeLastSimbolString(file.getName(), ".");
+        tableName = StringUtil.getBeforeLastSimbolString(file.getName(), ".");
         dbName = tableName + "Db";
         originFileString = getStringFromFileByUTF(file);
 
-        String content = UtilString.getAfterFirstSimbolString(originFileString.replace(LINE, ""), "class");
+        String content = StringUtil.getAfterFirstSimbolString(originFileString.replace(LINE, ""), "class");
         int startIndex = content.indexOf("{");
         int endIndex = content.lastIndexOf("}");
         content = content.substring(startIndex + 1, endIndex);
@@ -59,10 +53,10 @@ public class Parser {
 
                 // 获取字段
                 if (statement.contains("=")) {
-                    statement = UtilString.getBeforeLastSimbolString(statement, "=").trim();
+                    statement = StringUtil.getBeforeLastSimbolString(statement, "=").trim();
                 }
 
-                String field = UtilString.getAfterLastSimbolString(statement, " ");
+                String field = StringUtil.getAfterLastSimbolString(statement, " ");
                 if (field != null && !"".equals(field)) {
                     //fields.put(getUnderLineConstantFieldKey(field), field);
                     fields.put(field, field);

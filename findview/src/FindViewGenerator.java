@@ -21,15 +21,13 @@ import javax.swing.JTextField;
 
 /**
  * @author fengjingyu@foxmail.com
- * @description 以下的getVIewById、注释、成员变量字段、设置监听、switch等代码是用UiGenerator.jar 生成的
+ * @description 以下的getViewById、注释、成员变量字段、设置监听、switch等代码是自动生成的
  */
 public class FindViewGenerator {
 
     public static String CONMENT_KEY = "CONMENT";
-    public static String LAYOUT_MODEL = "xc_id_model_layout";
-    public static String LAYOUT_TITLE = "xc_id_model_titlebar";
-    public static String LAYOUT_CONTENT = "xc_id_model_content";
-    public static String LAYOUT_NONET = "xc_id_model_no_net";
+    public static String LAYOUT_PASS = "";
+    public static String LAYOUT_PASS2 = "";
     public static String LINE = "\r\n";
 
     public static JFrame frame;
@@ -408,8 +406,7 @@ public class FindViewGenerator {
     }
 
     public static boolean check(String key) {
-        if (key.equals(LAYOUT_MODEL) || key.equals(LAYOUT_TITLE)
-                || key.equals(LAYOUT_CONTENT) || key.equals(LAYOUT_NONET)) {
+        if (key.equals(LAYOUT_PASS) || key.equals(LAYOUT_PASS2)) {
             return true;
         } else {
             return true;

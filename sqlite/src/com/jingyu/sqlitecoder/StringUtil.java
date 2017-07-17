@@ -3,7 +3,7 @@ package com.jingyu.sqlitecoder;
 /**
  * Created by jingyu on 2017/2/21.
  */
-public class UtilString {
+public class StringUtil {
 
     /**
      * 获取origin中第一个simbol之后的字符串

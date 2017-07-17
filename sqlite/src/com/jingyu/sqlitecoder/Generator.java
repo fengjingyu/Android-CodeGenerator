@@ -5,11 +5,12 @@ import java.util.Map.Entry;
 
 /**
  * @author fengjingyu@foxmail.com
- * @description 1 model中的static的字段不会生成在db类中
+ * @description
+ * 1 model中的static的字段不会生成在db类中
  * 2 @ignore可以忽略model的某一个字段不生成在db类中
  * 3 默认会生成 insert（存入一个） inserts(批量存入) deleteAll(删除所有) queryCount(查询所有数量) queryAll（查询所有） queryPage（分页）方法
  * 4 model的字段之上的注释会生成在db类中（仅多行注释）
- * 5 通过配置@query @update @delete可以生成对应的删查改方法
+ * 5 通过配置@query @update @delete可以生成对应的删查改方法(已删除 @Deprecated)
  * <p>
  */
 public class Generator {
@@ -156,7 +157,7 @@ public class Generator {
     }
 
     private String getTableFieldStatement() {
-        return "    public static String mOperatorTableName = \"" + UtilString.setFirstLetterSmall(parser.getTableName()) + "Table\";";
+        return "    public static String mOperatorTableName = \"" + StringUtil.setFirstLetterSmall(parser.getTableName()) + "Table\";";
     }
 
     private String getDbVersionFieldStatement() {
@@ -164,7 +165,7 @@ public class Generator {
     }
 
     private String getDbNameFieldStatement() {
-        return "    public static final String DB_NAME = \"" + UtilString.setFirstLetterSmall(parser.getTableName()) + ".db\";";
+        return "    public static final String DB_NAME = \"" + StringUtil.setFirstLetterSmall(parser.getTableName()) + ".db\";";
     }
 
     private String queryPageByIdDesc() {
@@ -319,7 +320,7 @@ public class Generator {
         sb.append("	" + parser.getTableName() + " model = new " + parser.getTableName()
                 + "();" + Parser.LINE);
         for (Entry<String, String> entry : parser.getFields().entrySet()) {
-            sb.append("	model.set" + UtilString.setFirstLetterBig(entry.getValue())
+            sb.append("	model.set" + StringUtil.setFirstLetterBig(entry.getValue())
                     + "(c.getString(c.getColumnIndex("
                     + entry.getKey().toUpperCase() + ")));" + Parser.LINE);
         }
@@ -348,7 +349,7 @@ public class Generator {
         ArrayList<String> list = new ArrayList<String>();
         for (Entry<String, String> entry : parser.getFields().entrySet()) {
             list.add(entry.getKey().toUpperCase() + ", model." + "get"
-                    + UtilString.setFirstLetterBig(entry.getValue()) + "()");
+                    + StringUtil.setFirstLetterBig(entry.getValue()) + "()");
         }
         return list;
     }
@@ -364,7 +365,7 @@ public class Generator {
                     .append(" + ").append("\" text, \"" + Parser.LINE);
         }
 
-        String result = UtilString.getBeforeLastSimbolString(sb.toString(), ",");
+        String result = StringUtil.getBeforeLastSimbolString(sb.toString(), ",");
         result = result + ")\"";
 
         return result + ");";

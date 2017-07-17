@@ -10,12 +10,6 @@ import java.util.Map.Entry;
 
 /**
  * @author fengjingyu@foxmail.com
- * @description 1 model中的static的字段不会生成在db类中
- * 2 @ignore可以忽略model的某一个字段不生成在db类中
- * 3 默认会生成 insert（存入一个） inserts(批量存入) deleteAll(删除所有) queryCount(查询所有数量) queryAll（查询所有） queryPage（分页）方法
- * 4 model的字段之上的注释会生成在db类中（仅多行注释）
- * 5 通过配置@query @update @delete可以生成对应的删查改方法
- * <p>
  */
 public class Launcher {
 

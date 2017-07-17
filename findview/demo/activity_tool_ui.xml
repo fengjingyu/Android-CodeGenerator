@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <!-- 注释1 -->
+    <Button
+        android:id="@+id/id_test1"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:text="test1" />
+    <!-- 注释2 -->
+
+    <Button
+        android:id="@+id/id_test2"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:text="test2" />
+    <!-- 注释3 @c-->
+
+    <Button
+        android:id="@+id/id_test3"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:text="test3" />
+    <!-- 注释4 @c-->
+
+    <Button
+        android:id="@+id/id_test4"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:text="test4" />
+    <!-- 注释5 @c-->
+
+    <Button
+        android:id="@+id/id_test5"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:text="test5" />
+    <!-- 注释6 @c-->
+
+    <Button
+        android:id="@+id/id_test6"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:text="test6" />
+    <!-- 注释7 @c-->
+
+    <Button
+        android:id="@+id/id_test7"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:text="test7" />
+    <!-- 注释8 -->
+
+    <Button
+        android:id="@+id/id_test8"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:text="test8" />
+    <!-- 注释9 -->
+
+    <Button
+        android:id="@+id/id_test9"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:text="test9" />
+    <!-- 注释10 -->
+
+    <Button
+        android:id="@+id/id_test10"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:text="test10" />
+
+
+</LinearLayout>

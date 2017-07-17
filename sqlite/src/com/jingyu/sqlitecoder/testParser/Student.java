@@ -1,4 +1,4 @@
-package com.jingyu.sqlitecoder.test;
+package com.jingyu.sqlitecoder.testParser;
 
 import com.jingyu.sqlitecoder.Ignore;
 
@@ -18,4 +18,7 @@ public class Student {
     String phoneNum;
 
     String id;
+
 }
+
+
